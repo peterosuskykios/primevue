@@ -7,19 +7,7 @@ import TopProductsWidget from '@/components/dashboard/ecommerce/TopProductsWidge
 </script>
 
 <template>
-    <div class="grid grid-cols-12 gap-8">
-        <StatsEcommerceWidget />
-        <div class="col-span-12 xl:col-span-9">
-            <RevenueOverviewWidget />
-        </div>
-        <div class="col-span-12 xl:col-span-3">
-            <SalesByCategoryWidget />
-        </div>
-        <div class="col-span-12 lg:col-span-7">
-            <RecentSalesWidget />
-        </div>
-        <div class="col-span-12 lg:col-span-5">
-            <TopProductsWidget />
-        </div>
+    <div class="card">
+        <h1>Hello user, this is dashboard</h1>
     </div>
 </template>

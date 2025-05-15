@@ -14,7 +14,7 @@ const router = createRouter({
                     meta: {
                         breadcrumb: ['Dashboard']
                     },
-                    component: () => import('@/views/dashboards/Ecommerce.vue')
+                    component: () => import('@/views/dashboards/Dashboard.vue')
                 },
                 {
                     path: '/pages/empty',
@@ -32,7 +32,7 @@ const router = createRouter({
                     meta: {
                         breadcrumb: ['CMS', 'Stranky']
                     },
-                    component: () => import('@/views/user-management/UserCreate.vue')
+                    component: () => import('@/views/cms/Pages.vue')
                 },
                 {
                     path: '/cms/subory',
@@ -40,7 +40,7 @@ const router = createRouter({
                     meta: {
                         breadcrumb: ['CMS', 'Subory']
                     },
-                    component: () => import('@/views/user-management/UserList.vue')
+                    component: () => import('@/views/cms/Files.vue')
                 }
             ]
         },
