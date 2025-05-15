@@ -21,17 +21,8 @@ function showProfileSidebar() {
 
         <div class="topbar-end">
             <ul class="topbar-menu">
-                <li class="topbar-search">
-                    <IconField>
-                        <InputIcon class="pi pi-search" />
-                        <InputText type="text" placeholder="Search" class="w-48 sm:w-full" />
-                    </IconField>
-                </li>
-                <li>
-                    <Button icon="pi pi-palette" rounded @click="toggleConfigSidebar"></Button>
-                </li>
                 <li class="topbar-profile">
-                    <Button type="button" class="topbar-sidebarbutton" @click="showProfileSidebar">
+                    <Button type="button" class="topbar-sidebarbutton">
                         <img src="/demo/images/avatar/avatar.png" alt="Profile" />
                     </Button>
                 </li>
