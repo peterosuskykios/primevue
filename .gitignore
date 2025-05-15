@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+.vite/
+dist/
+
+# Vite env files
+.env
+.env.*.local
+
+# Build output
+*.log
+*.tmp
+
+# VSCode & IDE
+.vscode/
+.idea/
+
+# macOS & Windows systémové súbory
+.DS_Store
+Thumbs.db
+
+# Tailwind / PostCSS (neignoruj configy!)
+*.css.map
+
+# TypeScript 
+*.tsbuildinfo
+
+# Vercel / Netlify
+.vercel/
+.netlify/
