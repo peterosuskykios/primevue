@@ -5,29 +5,29 @@ import AppSubMenu from './AppSubMenu.vue';
 
 const model = ref([
     {
-        label: 'Dashboards',
+        label: 'Domov',
         icon: 'pi pi-home',
         items: [
             {
-                label: 'E-Commerce',
+                label: 'Dashboard',
                 icon: 'pi pi-fw pi-home',
                 to: '/'
             }
         ]
     },
     {
-        label: 'User Management',
+        label: 'CMS',
         icon: 'pi pi-fw pi-user',
         items: [
             {
-                label: 'List',
+                label: 'Stránky',
                 icon: 'pi pi-fw pi-list',
-                to: '/profile/list'
+                to: '/cms/stranky'
             },
             {
-                label: 'Create',
+                label: 'Súbory',
                 icon: 'pi pi-fw pi-plus',
-                to: '/profile/create'
+                to: '/cms/subory'
             }
         ]
     }

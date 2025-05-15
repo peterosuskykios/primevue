@@ -10,9 +10,9 @@ const router = createRouter({
             children: [
                 {
                     path: '/',
-                    name: 'e-commerce',
+                    name: 'dashboard',
                     meta: {
-                        breadcrumb: ['E-Commerce Dashboard']
+                        breadcrumb: ['Dashboard']
                     },
                     component: () => import('@/views/dashboards/Ecommerce.vue')
                 },
@@ -91,18 +91,18 @@ const router = createRouter({
                     component: () => import('@/views/e-commerce/OrderSummary.vue')
                 },
                 {
-                    path: '/profile/create',
-                    name: 'user-create',
+                    path: '/cms/stranky',
+                    name: 'cms-stranky',
                     meta: {
-                        breadcrumb: ['User Management', 'Create']
+                        breadcrumb: ['CMS', 'Stranky']
                     },
                     component: () => import('@/views/user-management/UserCreate.vue')
                 },
                 {
-                    path: '/profile/list',
-                    name: 'user-list',
+                    path: '/cms/subory',
+                    name: 'cms-subory',
                     meta: {
-                        breadcrumb: ['User Management', 'List']
+                        breadcrumb: ['CMS', 'Subory']
                     },
                     component: () => import('@/views/user-management/UserList.vue')
                 },
