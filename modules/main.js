@@ -1,8 +1,8 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import router from './router';
+import router from './base/router';
 
-import BlockViewer from '@/components/BlockViewer.vue';
+import BlockViewer from '@/base/BlockViewer.vue';
 import Aura from '@primeuix/themes/aura';
 import PrimeVue from 'primevue/config';
 import ConfirmationService from 'primevue/confirmationservice';

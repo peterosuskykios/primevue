@@ -1,4 +1,4 @@
-import AppLayout from '@/layout/AppLayout.vue';
+import AppLayout from '@/base/layout/AppLayout.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
@@ -14,7 +14,7 @@ const router = createRouter({
                     meta: {
                         breadcrumb: ['Dashboard']
                     },
-                    component: () => import('#/dashboard/pages/Dashboard.vue')
+                    component: () => import('@/dashboard/pages/Dashboard.vue')
                 },
                 {
                     path: '/cms/stranky',
@@ -22,7 +22,7 @@ const router = createRouter({
                     meta: {
                         breadcrumb: ['CMS', 'Stránky']
                     },
-                    component: () => import('#/cms/pages/Pages.vue')
+                    component: () => import('@/cms/pages/Pages.vue')
                 },
                 {
                     path: '/cms/subory',
@@ -30,7 +30,7 @@ const router = createRouter({
                     meta: {
                         breadcrumb: ['CMS', 'Súbory']
                     },
-                    component: () => import('#/cms/pages/Files.vue')
+                    component: () => import('@/cms/pages/Files.vue')
                 }
             ]
         }
