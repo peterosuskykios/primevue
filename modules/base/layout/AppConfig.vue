@@ -238,7 +238,7 @@ function setMenuMode(mode) {
         v-model:visible="layoutState.configSidebarVisible"
         position="right"
         class="layout-config-sidebar w-80"
-        header="Settings"
+        header="Settingss"
         :pt="{
             pcCloseButton: { root: 'ml-auto' }
         }"
