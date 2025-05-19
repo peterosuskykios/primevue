@@ -1,0 +1,108 @@
+[
+    {
+      "title": "Úvod",
+      "url": "dashboard",
+      "type": "Domovská stránka",
+      "parent": "",
+      "draft": false
+    },
+    {
+      "title": "Vodná cesta",
+      "url": "vodna-cesta",
+      "type": "Nadradená stránka",
+      "parent": "",
+      "draft": false
+    },
+    {
+      "title": "Vodné stavy",
+      "url": "vodne-stavy",
+      "type": "Vodné stanice",
+      "parent": "Vodná cesta",
+      "draft": false
+    },
+    {
+      "title": "Meteo výstrahy",
+      "url": "hydro-meteo-vystrahy",
+      "type": "Meteo",
+      "parent": "Vodná cesta",
+      "draft": false
+    },
+    {
+      "title": "Elektronické mapy",
+      "url": "elektronicke-mapy",
+      "type": "Textová",
+      "parent": "Vodná cesta",
+      "draft": false
+    },
+    {
+      "title": "Obmedzenia rozmerov plavidiel/zostáv",
+      "url": "obmedzenia-rozmerov",
+      "type": "Obmedzenia",
+      "parent": "Vodná cesta",
+      "draft": false
+    },
+    {
+      "title": "Užitočné odkazy",
+      "url": "uzitocne-odkazy",
+      "type": "Textová",
+      "parent": "",
+      "draft": false
+    },
+    {
+      "title": "Novinky",
+      "url": "novinky",
+      "type": "Novinky",
+      "parent": "",
+      "draft": false
+    },
+    {
+      "title": "Kontakt",
+      "url": "kontakt",
+      "type": "Textová",
+      "parent": "",
+      "draft": false
+    },
+    {
+      "title": "Zobrazenie na mape",
+      "url": "mapa",
+      "type": "Mapa",
+      "parent": "",
+      "draft": false
+    },
+    {
+      "title": "Ochrana osobných údajov",
+      "url": "ochrana-osobnych-udajov",
+      "type": "Textová",
+      "parent": "",
+      "draft": false
+    },
+    {
+      "title": "Vyhlásenie o prístupnosti",
+      "url": "vyhlasenie-o-pristupnosti",
+      "type": "Textová",
+      "parent": "",
+      "draft": false
+    },
+    {
+      "title": "Manuály",
+      "url": "manualy",
+      "type": "Textová",
+      "parent": "",
+      "draft": false
+    },
+    {
+      "title": "yyy",
+      "url": "yyy12",
+      "type": "Textová",
+      "parent": "",
+      "draft": false
+    },
+    {
+      "title": "xxx",
+      "url": "xxx3",
+      "type": "Textová",
+      "parent": "",
+      "draft": false
+    }
+  ]
+  

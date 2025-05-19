@@ -134,17 +134,13 @@ function getStatusLabel(status) {
 }
 </script>
 
+<!-- nayov stranky, URL, typ stranky, nadradena stranka, koncept, filter -->
 <template>
     <div>
         <div class="card">
             <Toolbar class="mb-6">
                 <template #start>
                     <Button label="New" icon="pi pi-plus" severity="secondary" class="mr-2" @click="openNew" />
-                    <Button label="Delete" icon="pi pi-trash" severity="secondary" @click="confirmDeleteSelected" :disabled="!selectedProducts || !selectedProducts.length" />
-                </template>
-
-                <template #end>
-                    <Button label="Export" icon="pi pi-upload" severity="secondary" @click="exportCSV($event)" />
                 </template>
             </Toolbar>
 
@@ -162,7 +158,7 @@ function getStatusLabel(status) {
             >
                 <template #header>
                     <div class="flex flex-wrap gap-2 items-center justify-between">
-                        <h4 class="m-0">Manage Products</h4>
+                        <h1 class="m-0">Manage Products</h1>
                         <IconField>
                             <InputIcon>
                                 <i class="pi pi-search" />
@@ -173,33 +169,14 @@ function getStatusLabel(status) {
                 </template>
 
                 <Column selectionMode="multiple" style="width: 3rem" :exportable="false"></Column>
-                <Column field="code" header="Code" sortable style="min-width: 12rem"></Column>
-                <Column field="name" header="Name" sortable style="min-width: 16rem"></Column>
-                <Column header="Image">
-                    <template #body="slotProps">
-                        <img :src="`https://primefaces.org/cdn/primevue/images/product/${slotProps.data.image}`" :alt="slotProps.data.image" class="rounded" style="width: 64px" />
-                    </template>
-                </Column>
-                <Column field="price" header="Price" sortable style="min-width: 8rem">
-                    <template #body="slotProps">
-                        {{ formatCurrency(slotProps.data.price) }}
-                    </template>
-                </Column>
-                <Column field="category" header="Category" sortable style="min-width: 10rem"></Column>
-                <Column field="rating" header="Reviews" sortable style="min-width: 12rem">
-                    <template #body="slotProps">
-                        <Rating :modelValue="slotProps.data.rating" :readonly="true" />
-                    </template>
-                </Column>
-                <Column field="inventoryStatus" header="Status" sortable style="min-width: 12rem">
-                    <template #body="slotProps">
-                        <Tag :value="slotProps.data.inventoryStatus" :severity="getStatusLabel(slotProps.data.inventoryStatus)" />
-                    </template>
-                </Column>
+                <Column field="code" header="Názov stránky" sortable style="min-width: 12rem"></Column>
+                <Column field="name" header="URL" sortable style="min-width: 16rem"></Column>
+                <Column field="name" header="Typ stránky" sortable style="min-width: 16rem"></Column>
+                <Column field="name" header="Nadradená stránka" sortable style="min-width: 16rem"></Column>
+                <Column field="name" header="Koncept" sortable style="min-width: 16rem"></Column>
                 <Column :exportable="false" style="min-width: 12rem">
                     <template #body="slotProps">
-                        <Button icon="pi pi-pencil" outlined rounded class="mr-2" @click="editProduct(slotProps.data)" />
-                        <Button icon="pi pi-trash" outlined rounded severity="danger" @click="confirmDeleteProduct(slotProps.data)" />
+                        <Button outlined rounded class="mr-2" @click="editProduct(slotProps.data)">Upraviť</Button>
                     </template>
                 </Column>
             </DataTable>
