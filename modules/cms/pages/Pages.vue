@@ -26,11 +26,6 @@ const statuses = ref([
     { label: 'OUTOFSTOCK', value: 'outofstock' }
 ]);
 
-function formatCurrency(value) {
-    if (value) return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-    return;
-}
-
 function openNew() {
     product.value = {};
     submitted.value = false;
@@ -69,11 +64,6 @@ function editProduct(prod) {
     productDialog.value = true;
 }
 
-function confirmDeleteProduct(prod) {
-    product.value = prod;
-    deleteProductDialog.value = true;
-}
-
 function deleteProduct() {
     products.value = products.value.filter((val) => val.id !== product.value.id);
     deleteProductDialog.value = false;
@@ -102,14 +92,6 @@ function createId() {
     return id;
 }
 
-function exportCSV() {
-    dt.value.exportCSV();
-}
-
-function confirmDeleteSelected() {
-    deleteProductsDialog.value = true;
-}
-
 function deleteSelectedProducts() {
     products.value = products.value.filter((val) => !selectedProducts.value.includes(val));
     deleteProductsDialog.value = false;
@@ -117,24 +99,8 @@ function deleteSelectedProducts() {
     toast.add({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
 }
 
-function getStatusLabel(status) {
-    switch (status) {
-        case 'INSTOCK':
-            return 'success';
-
-        case 'LOWSTOCK':
-            return 'warn';
-
-        case 'OUTOFSTOCK':
-            return 'danger';
-
-        default:
-            return null;
-    }
-}
 </script>
 
-<!-- nayov stranky, URL, typ stranky, nadradena stranka, koncept, filter -->
 <template>
     <div>
         <div class="card">
