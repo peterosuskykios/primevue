@@ -1,22 +1,26 @@
 <script setup>
-import { ProductService } from '../../service/ProductService';
 import { FilterMatchMode } from '@primevue/core/api';
 import { useToast } from 'primevue/usetoast';
 import { onMounted, ref } from 'vue';
 import pagesJson from '@/assets/pages.json'
 
+import { useRouter } from 'vue-router';
+const router = useRouter();
+
+function editProduct(prod) {
+    router.push({ name: 'cms-stranky-detail', params: { id: prod.url } });
+}
 
 onMounted(() => {
     products.value = pagesJson.map((page) => ({
-        id: createId(),
-        name: page.title,
-        url: page.url,
-        type: page.type,
-        parent: page.parent,
-        draft: page.draft
+    id: page.url,
+    name: page.title,
+    url: page.url,
+    type: page.type,
+    parent: page.parent,
+    draft: page.draft
     }));
 });
-
 
 const toast = useToast();
 const dt = ref();
@@ -67,11 +71,6 @@ function saveProduct() {
         productDialog.value = false;
         product.value = {};
     }
-}
-
-function editProduct(prod) {
-    product.value = { ...prod };
-    productDialog.value = true;
 }
 
 function deleteProduct() {
