@@ -3,10 +3,20 @@ import { ProductService } from '../../service/ProductService';
 import { FilterMatchMode } from '@primevue/core/api';
 import { useToast } from 'primevue/usetoast';
 import { onMounted, ref } from 'vue';
+import pagesJson from '@/assets/pages.json'
+
 
 onMounted(() => {
-    ProductService.getProducts().then((data) => (products.value = data));
+    products.value = pagesJson.map((page) => ({
+        id: createId(),
+        name: page.title,
+        url: page.url,
+        type: page.type,
+        parent: page.parent,
+        draft: page.draft
+    }));
 });
+
 
 const toast = useToast();
 const dt = ref();
@@ -135,11 +145,11 @@ function deleteSelectedProducts() {
                 </template>
 
                 <Column selectionMode="multiple" style="width: 3rem" :exportable="false"></Column>
-                <Column field="code" header="Názov stránky" sortable style="min-width: 12rem"></Column>
-                <Column field="name" header="URL" sortable style="min-width: 16rem"></Column>
-                <Column field="name" header="Typ stránky" sortable style="min-width: 16rem"></Column>
-                <Column field="name" header="Nadradená stránka" sortable style="min-width: 16rem"></Column>
-                <Column field="name" header="Koncept" sortable style="min-width: 16rem"></Column>
+                <Column field="name" header="Názov stránky" sortable style="min-width: 12rem"></Column>
+                <Column field="url" header="URL" sortable style="min-width: 16rem"></Column>
+                <Column field="type" header="Typ stránky" sortable style="min-width: 16rem"></Column>
+                <Column field="parent" header="Nadradená stránka" sortable style="min-width: 16rem"></Column>
+                <Column field="draft" header="Koncept" sortable style="min-width: 16rem"></Column>
                 <Column :exportable="false" style="min-width: 12rem">
                     <template #body="slotProps">
                         <Button outlined rounded class="mr-2" @click="editProduct(slotProps.data)">Upraviť</Button>
