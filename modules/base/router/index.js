@@ -11,9 +11,6 @@ const router = createRouter({
                 {
                     path: '/',
                     name: 'dashboard',
-                    meta: {
-                        breadcrumb: ['Dashboard']
-                    },
                     component: () => import('@/dashboard/pages/Dashboard.vue')
                 },
                 {
