@@ -1,23 +1,26 @@
 <script setup>
 import { ref } from 'vue';
 
-
 defineOptions({
   name: 'files'
 });
 
-const text = ref('hello files');
+const text = ref('try to save me');
+
+console.log('Files mounted');
+
+
 </script>
 
 <template>
-    <div class="card">
-        <h1>Files</h1>
-        <p>Here you can manage your files.</p>
-        <p>Upload, delete, and organize your files as needed.</p>
-        <p>Use the sidebar to navigate through different sections.</p>
+    <Card>
+      <template #title>Files Card</template>
+      <template #subtitle>KeepAlive example</template>
+      <template #content>
+       <Textarea v-model="text" size="small" placeholder="Small" rows="3" />
+        <Textarea v-model="text" placeholder="Normal" rows="3" />
+       <Textarea v-model="text" size="large" placeholder="Large" rows="3" />
+      </template>
 
-
-        <input v-model="text" />
-        <p>{{ text }}</p>
-    </div>
+    </Card>
 </template>
