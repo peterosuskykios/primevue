@@ -6,17 +6,22 @@ const route = useRoute();
 const breadcrumbRoutes = ref([]);
 
 function setBreadcrumbRoutes() {
-    if (route.meta.breadcrumb) {
-        breadcrumbRoutes.value = route.meta.breadcrumb;
+    const metaCrumbs = route.meta.breadcrumb;
 
-        return;
+    if (typeof metaCrumbs === 'function') {
+        breadcrumbRoutes.value = metaCrumbs(route);
+    } else if (Array.isArray(metaCrumbs)) {
+        breadcrumbRoutes.value = metaCrumbs.map((item) => {
+            return item === 'Detail' && route.params.id ? route.params.id : item;
+        });
+    } else {
+        // fallback – generate breadcrumbs from path
+        breadcrumbRoutes.value = route.fullPath
+            .split('/')
+            .filter((item) => item !== '')
+            .filter((item) => isNaN(Number(item)))
+            .map((item) => item.charAt(0).toUpperCase() + item.slice(1));
     }
-
-    breadcrumbRoutes.value = route.fullPath
-        .split('/')
-        .filter((item) => item !== '')
-        .filter((item) => isNaN(Number(item)))
-        .map((item) => item.charAt(0).toUpperCase() + item.slice(1));
 }
 
 watch(
