@@ -1,0 +1,322 @@
+[
+  {
+    "id": 1,
+    "titleSk": "Testovacia stránka 1",
+    "titleEn": "Test Page 1",
+    "url": "/test-page-1",
+    "pageType": "MANUALS",
+    "textSk": "Obsah testovacej stránky 1 v slovenčine.",
+    "textEn": "Content of test page 1 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180220Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180226Z"
+    }
+  },
+  {
+    "id": 2,
+    "titleSk": "Testovacia stránka 2",
+    "titleEn": "Test Page 2",
+    "url": "/test-page-2",
+    "pageType": "PRIVACY",
+    "textSk": "Obsah testovacej stránky 2 v slovenčine.",
+    "textEn": "Content of test page 2 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180231Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180232Z"
+    }
+  },
+  {
+    "id": 3,
+    "titleSk": "Testovacia stránka 3",
+    "titleEn": "Test Page 3",
+    "url": "/test-page-3",
+    "pageType": "MANUALS",
+    "textSk": "Obsah testovacej stránky 3 v slovenčine.",
+    "textEn": "Content of test page 3 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180236Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180237Z"
+    }
+  },
+  {
+    "id": 4,
+    "titleSk": "Testovacia stránka 4",
+    "titleEn": "Test Page 4",
+    "url": "/test-page-4",
+    "pageType": "ACCESSIBILITY",
+    "textSk": "Obsah testovacej stránky 4 v slovenčine.",
+    "textEn": "Content of test page 4 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180242Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180244Z"
+    }
+  },
+  {
+    "id": 5,
+    "titleSk": "Testovacia stránka 5",
+    "titleEn": "Test Page 5",
+    "url": "/test-page-5",
+    "pageType": "PRIVACY",
+    "textSk": "Obsah testovacej stránky 5 v slovenčine.",
+    "textEn": "Content of test page 5 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180248Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180249Z"
+    }
+  },
+  {
+    "id": 6,
+    "titleSk": "Testovacia stránka 6",
+    "titleEn": "Test Page 6",
+    "url": "/test-page-6",
+    "pageType": "PRIVACY",
+    "textSk": "Obsah testovacej stránky 6 v slovenčine.",
+    "textEn": "Content of test page 6 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180252Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180253Z"
+    }
+  },
+  {
+    "id": 7,
+    "titleSk": "Testovacia stránka 7",
+    "titleEn": "Test Page 7",
+    "url": "/test-page-7",
+    "pageType": "ACCESSIBILITY",
+    "textSk": "Obsah testovacej stránky 7 v slovenčine.",
+    "textEn": "Content of test page 7 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180256Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180258Z"
+    }
+  },
+  {
+    "id": 8,
+    "titleSk": "Testovacia stránka 8",
+    "titleEn": "Test Page 8",
+    "url": "/test-page-8",
+    "pageType": "MANUALS",
+    "textSk": "Obsah testovacej stránky 8 v slovenčine.",
+    "textEn": "Content of test page 8 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180263Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180265Z"
+    }
+  },
+  {
+    "id": 9,
+    "titleSk": "Testovacia stránka 9",
+    "titleEn": "Test Page 9",
+    "url": "/test-page-9",
+    "pageType": "ACCESSIBILITY",
+    "textSk": "Obsah testovacej stránky 9 v slovenčine.",
+    "textEn": "Content of test page 9 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180268Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180270Z"
+    }
+  },
+  {
+    "id": 10,
+    "titleSk": "Testovacia stránka 10",
+    "titleEn": "Test Page 10",
+    "url": "/test-page-10",
+    "pageType": "ACCESSIBILITY",
+    "textSk": "Obsah testovacej stránky 10 v slovenčine.",
+    "textEn": "Content of test page 10 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180273Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180274Z"
+    }
+  },
+  {
+    "id": 11,
+    "titleSk": "Testovacia stránka 11",
+    "titleEn": "Test Page 11",
+    "url": "/test-page-11",
+    "pageType": "MANUALS",
+    "textSk": "Obsah testovacej stránky 11 v slovenčine.",
+    "textEn": "Content of test page 11 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180278Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180280Z"
+    }
+  },
+  {
+    "id": 12,
+    "titleSk": "Testovacia stránka 12",
+    "titleEn": "Test Page 12",
+    "url": "/test-page-12",
+    "pageType": "CONTACT",
+    "textSk": "Obsah testovacej stránky 12 v slovenčine.",
+    "textEn": "Content of test page 12 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180285Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180288Z"
+    }
+  },
+  {
+    "id": 13,
+    "titleSk": "Testovacia stránka 13",
+    "titleEn": "Test Page 13",
+    "url": "/test-page-13",
+    "pageType": "PRIVACY",
+    "textSk": "Obsah testovacej stránky 13 v slovenčine.",
+    "textEn": "Content of test page 13 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180292Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180294Z"
+    }
+  },
+  {
+    "id": 14,
+    "titleSk": "Testovacia stránka 14",
+    "titleEn": "Test Page 14",
+    "url": "/test-page-14",
+    "pageType": "ACCESSIBILITY",
+    "textSk": "Obsah testovacej stránky 14 v slovenčine.",
+    "textEn": "Content of test page 14 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180299Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180301Z"
+    }
+  },
+  {
+    "id": 15,
+    "titleSk": "Testovacia stránka 15",
+    "titleEn": "Test Page 15",
+    "url": "/test-page-15",
+    "pageType": "CONTACT",
+    "textSk": "Obsah testovacej stránky 15 v slovenčine.",
+    "textEn": "Content of test page 15 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180306Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180308Z"
+    }
+  },
+  {
+    "id": 16,
+    "titleSk": "Testovacia stránka 16",
+    "titleEn": "Test Page 16",
+    "url": "/test-page-16",
+    "pageType": "ACCESSIBILITY",
+    "textSk": "Obsah testovacej stránky 16 v slovenčine.",
+    "textEn": "Content of test page 16 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180310Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180312Z"
+    }
+  },
+  {
+    "id": 17,
+    "titleSk": "Testovacia stránka 17",
+    "titleEn": "Test Page 17",
+    "url": "/test-page-17",
+    "pageType": "MANUALS",
+    "textSk": "Obsah testovacej stránky 17 v slovenčine.",
+    "textEn": "Content of test page 17 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180315Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180316Z"
+    }
+  },
+  {
+    "id": 18,
+    "titleSk": "Testovacia stránka 18",
+    "titleEn": "Test Page 18",
+    "url": "/test-page-18",
+    "pageType": "ACCESSIBILITY",
+    "textSk": "Obsah testovacej stránky 18 v slovenčine.",
+    "textEn": "Content of test page 18 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180325Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180327Z"
+    }
+  },
+  {
+    "id": 19,
+    "titleSk": "Testovacia stránka 19",
+    "titleEn": "Test Page 19",
+    "url": "/test-page-19",
+    "pageType": "MANUALS",
+    "textSk": "Obsah testovacej stránky 19 v slovenčine.",
+    "textEn": "Content of test page 19 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180329Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180331Z"
+    }
+  },
+  {
+    "id": 20,
+    "titleSk": "Testovacia stránka 20",
+    "titleEn": "Test Page 20",
+    "url": "/test-page-20",
+    "pageType": "PRIVACY",
+    "textSk": "Obsah testovacej stránky 20 v slovenčine.",
+    "textEn": "Content of test page 20 in English.",
+    "objectVersion": 1,
+    "audit": {
+      "createdBy": "tester",
+      "created": "2025-05-21T08:58:05.180334Z",
+      "modifiedBy": "tester",
+      "modified": "2025-05-21T08:58:05.180335Z"
+    }
+  }
+]

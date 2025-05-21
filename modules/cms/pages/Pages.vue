@@ -1,39 +1,37 @@
 <script setup>
 import { FilterMatchMode } from '@primevue/core/api';
-import { useToast } from 'primevue/usetoast';
 import { onMounted, ref } from 'vue';
-import pagesJson from '@/assets/pages.json'
+import pagesJson from '@/assets/test_CmsPageDto.json';
 
 import { useRouter } from 'vue-router';
 const router = useRouter();
 
-function editProduct(prod) {
-    router.push({ name: 'cms-stranky-detail', params: { id: prod.url } });
+function editPage(page) {
+    router.push({ name: 'cms-stranky-detail', params: { id: page.id } });
 }
 
-onMounted(() => {
-    products.value = pagesJson.map((page) => ({
-    id: page.url,
-    name: page.title,
-    url: page.url,
-    type: page.type,
-    parent: page.parent,
-    draft: page.draft
-    }));
-});
-
 const dt = ref();
-const products = ref();
-const selectedProducts = ref();
+const pages = ref([]);
 const filters = ref({
     global: { value: null, matchMode: FilterMatchMode.CONTAINS }
+});
+
+onMounted(() => {
+    pages.value = pagesJson.map((page) => ({
+        id: page.id,
+        title: page.titleSk,
+        url: page.url,
+        type: page.pageType,
+        parent: '-', // Ak nie je definované v JSONe
+        draft: 'Nie' // Predpokladáme, že všetky sú publikované
+    }));
 });
 
 function openNew() {
     router.push({ name: 'cms-stranky-detail', params: { id: 'new' } });
 }
-
 </script>
+
 
 <template>
     <div>
@@ -46,8 +44,7 @@ function openNew() {
         <div class="card">
             <DataTable
                 ref="dt"
-                v-model:selection="selectedProducts"
-                :value="products"
+                :value="pages"
                 dataKey="id"
                 :paginator="true"
                 :rows="10"
@@ -69,14 +66,14 @@ function openNew() {
                 </template>
 
                 <Column selectionMode="multiple" style="width: 3rem" :exportable="false"></Column>
-                <Column field="name" header="Názov stránky" sortable style="min-width: 12rem"></Column>
+                <Column field="title" header="Názov stránky" sortable style="min-width: 12rem"></Column>
                 <Column field="url" header="URL" sortable style="min-width: 16rem"></Column>
                 <Column field="type" header="Typ stránky" sortable style="min-width: 16rem"></Column>
                 <Column field="parent" header="Nadradená stránka" sortable style="min-width: 16rem"></Column>
                 <Column field="draft" header="Koncept" sortable style="min-width: 16rem"></Column>
                 <Column :exportable="false" style="min-width: 12rem">
                     <template #body="slotProps">
-                        <Button outlined rounded class="mr-2" @click="editProduct(slotProps.data)">Upraviť</Button>
+                        <Button outlined rounded class="mr-2" @click="editPage(slotProps.data)">Upraviť</Button>
                     </template>
                 </Column>
             </DataTable>
