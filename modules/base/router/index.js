@@ -34,7 +34,7 @@ const router = createRouter({
                     path: '/cms/stranky/:id',
                     name: 'cms-stranky-detail',
                     meta: {
-                        breadcrumb: route => ['CMS', 'Stránky', route.params.id]
+                        breadcrumb: route => ['CMS', 'Stránky', 'Detail']
                     },
                     component: () => import('@/cms/pages/PageDetail.vue')
                 },                

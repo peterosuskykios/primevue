@@ -34,18 +34,6 @@ function setBreadcrumbRoutes() {
     }
 }
 
-
-function buildBreadcrumbPath(index, items) {
-    // Základné prefixy podľa tvojej štruktúry
-    const base = '/cms';
-    const mapped = items.slice(0, index + 1).map(item =>
-        item.toLowerCase().replace(/ /g, '-')
-    );
-    return `${base}/${mapped.join('/')}`;
-}
-
-
-
 watch(
     route,
     () => {
