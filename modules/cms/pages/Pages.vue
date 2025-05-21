@@ -22,69 +22,28 @@ onMounted(() => {
     }));
 });
 
-const toast = useToast();
 const dt = ref();
 const products = ref();
-const productDialog = ref(false);
-const deleteProductDialog = ref(false);
-const deleteProductsDialog = ref(false);
-const product = ref({});
 const selectedProducts = ref();
 const filters = ref({
     global: { value: null, matchMode: FilterMatchMode.CONTAINS }
 });
-const submitted = ref(false);
-const statuses = ref([
-    { label: 'INSTOCK', value: 'instock' },
-    { label: 'LOWSTOCK', value: 'lowstock' },
-    { label: 'OUTOFSTOCK', value: 'outofstock' }
-]);
 
 function openNew() {
-    product.value = {};
-    submitted.value = false;
-    productDialog.value = true;
-}
-
-function findIndexById(id) {
-    let index = -1;
-    for (let i = 0; i < products.value.length; i++) {
-        if (products.value[i].id === id) {
-            index = i;
-            break;
-        }
-    }
-
-    return index;
-}
-
-function createId() {
-    let id = '';
-    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    for (var i = 0; i < 5; i++) {
-        id += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    return id;
-}
-
-function deleteSelectedProducts() {
-    products.value = products.value.filter((val) => !selectedProducts.value.includes(val));
-    deleteProductsDialog.value = false;
-    selectedProducts.value = null;
-    toast.add({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
+    router.push({ name: 'cms-stranky-detail', params: { id: 'new' } });
 }
 
 </script>
 
 <template>
     <div>
+        <div class="page-header flex justify-between items-center mb-4">
+            <h1 class="text-2xl font-bold">Detail stránky</h1>
+            <div class="flex gap-2">
+                <Button label="Novy" class="secondary" @click="openNew" />
+        </div>
+    </div>
         <div class="card">
-            <Toolbar class="mb-6">
-                <template #start>
-                    <Button label="New" icon="pi pi-plus" severity="secondary" class="mr-2" @click="openNew" />
-                </template>
-            </Toolbar>
-
             <DataTable
                 ref="dt"
                 v-model:selection="selectedProducts"
