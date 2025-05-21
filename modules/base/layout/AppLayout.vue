@@ -84,7 +84,7 @@ const containerClass = computed(() => {
             <AppBreadCrumb class="content-breadcrumb"></AppBreadCrumb>
             <div class="layout-content">
                 <router-view v-slot="{ Component }">
-                    <KeepAlive :include="['dashboard', 'files']">
+                    <KeepAlive>
                         <component :is="Component" />
                     </KeepAlive>
                 </router-view>

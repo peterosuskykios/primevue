@@ -6,6 +6,10 @@ import pagesJson from '@/assets/test_CmsPageDto.json';
 import { useRouter } from 'vue-router';
 const router = useRouter();
 
+defineOptions({
+  name: 'pages'
+});
+
 function editPage(page) {
     router.push({ name: 'cms-stranky-detail', params: { id: page.id } });
 }
@@ -22,8 +26,8 @@ onMounted(() => {
         title: page.titleSk,
         url: page.url,
         type: page.pageType,
-        parent: '-', // Ak nie je definované v JSONe
-        draft: 'Nie' // Predpokladáme, že všetky sú publikované
+        parent: '-', // Dropdown - nemam odkial tahat
+        draft: 'Nie' // Doplnit tlacidlo Koncept
     }));
 });
 
