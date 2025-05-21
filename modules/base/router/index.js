@@ -12,12 +12,21 @@ const router = createRouter({
                     path: '/',
                     name: 'dashboard',
                     component: () => import('@/dashboard/pages/Dashboard.vue')
+                },              
+                {
+                    path: '/cms/',
+                    name: 'cms',
+                    redirect: '/cms/stranky',
+                    component: () => import('@/cms/pages/Pages.vue')
                 },
                 {
                     path: '/cms/stranky',
                     name: 'cms-stranky',
                     meta: {
-                        breadcrumb: ['CMS', 'Stránky']
+                        breadcrumb: [
+                          { label: 'CMS', path: '/cms' },
+                          { label: 'Stránky', path: '/cms/stranky' }
+                        ]
                     },
                     component: () => import('@/cms/pages/Pages.vue')
                 },
@@ -27,8 +36,7 @@ const router = createRouter({
                     meta: {
                         breadcrumb: route => ['CMS', 'Stránky', route.params.id]
                     },
-                    component: () => import('@/cms/pages/PageDetail.vue'),
-                    props: true
+                    component: () => import('@/cms/pages/PageDetail.vue')
                 },                
                 {
                     path: '/cms/subory',

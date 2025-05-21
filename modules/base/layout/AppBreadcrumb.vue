@@ -8,21 +8,43 @@ const breadcrumbRoutes = ref([]);
 function setBreadcrumbRoutes() {
     const metaCrumbs = route.meta.breadcrumb;
 
-    if (typeof metaCrumbs === 'function') {
-        breadcrumbRoutes.value = metaCrumbs(route);
-    } else if (Array.isArray(metaCrumbs)) {
-        breadcrumbRoutes.value = metaCrumbs.map((item) => {
-            return item === 'Detail' && route.params.id ? route.params.id : item;
-        });
+    if (Array.isArray(metaCrumbs)) {
+        breadcrumbRoutes.value = metaCrumbs.map(item =>
+            typeof item === 'string'
+                ? { label: item, path: '/' + item.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '') }
+                : { label: item.label, path: item.path }
+        );
+    } else if (typeof metaCrumbs === 'function') {
+        const crumbs = metaCrumbs(route);
+        breadcrumbRoutes.value = crumbs.map((label, index) => ({
+            label,
+            path: '/' + crumbs.slice(0, index + 1)
+                .map(c => c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+                .join('/')
+        }));
     } else {
-        // fallback – generate breadcrumbs from path
+        // fallback
         breadcrumbRoutes.value = route.fullPath
             .split('/')
             .filter((item) => item !== '')
-            .filter((item) => isNaN(Number(item)))
-            .map((item) => item.charAt(0).toUpperCase() + item.slice(1));
+            .map((item, index, array) => ({
+                label: item.charAt(0).toUpperCase() + item.slice(1),
+                path: '/' + array.slice(0, index + 1).join('/')
+            }));
     }
 }
+
+
+function buildBreadcrumbPath(index, items) {
+    // Základné prefixy podľa tvojej štruktúry
+    const base = '/cms';
+    const mapped = items.slice(0, index + 1).map(item =>
+        item.toLowerCase().replace(/ /g, '-')
+    );
+    return `${base}/${mapped.join('/')}`;
+}
+
+
 
 watch(
     route,
@@ -35,9 +57,16 @@ watch(
 
 <template>
     <nav class="layout-breadcrumb">
-        <ol>
-            <template v-for="(breadcrumbRoute, i) in breadcrumbRoutes" :key="breadcrumbRoute">
-                <li>{{ breadcrumbRoute }}</li>
+        <ol class="flex gap-2 items-center">
+            <template v-for="(breadcrumb, i) in breadcrumbRoutes" :key="breadcrumb.path">
+                <li v-if="i !== breadcrumbRoutes.length - 1">
+                    <RouterLink :to="breadcrumb.path" class="text-blue-600 hover:underline">
+                        {{ breadcrumb.label }}
+                    </RouterLink>
+                </li>
+                <li v-else class="font-semibold text-gray-900">
+                    {{ breadcrumb.label }}
+                </li>
                 <li v-if="i !== breadcrumbRoutes.length - 1" class="layout-breadcrumb-chevron">/</li>
             </template>
         </ol>
