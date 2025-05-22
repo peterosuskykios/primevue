@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
+// @ts-ignore
 import pagesJson from '@/assets/test_CmsPageDto.json';
+// @ts-ignore
+import AuditPanel from '@/cms/components/AuditOverlayPanel.vue';
 
 const router = useRouter();
 const route = useRoute();
@@ -9,7 +12,8 @@ const route = useRoute();
 const page = ref<any>({});
 const textSk = ref('');
 const textEn = ref('');
-const showAudit = ref(false);
+
+const auditPanelRef = ref<InstanceType<typeof AuditPanel>>();
 
 const PAGE_TYPES = [
   { label: 'Manuály', value: 'MANUALS' },
@@ -50,26 +54,17 @@ function onSave() {
   router.back();
 }
 
-function formatDate(iso: string | undefined): string {
-  if (!iso) return '—';
-  const date = new Date(iso);
-  return date.toLocaleString('sk-SK', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit'
-  });
+function onShowAudit(event: Event) {
+  auditPanelRef.value?.toggle(event);
 }
-
 </script>
 
 <template>
     <div class="page-header flex justify-between items-center mb-4">
       <div class="flex items-center gap-2">
         <h1 class="text-2xl font-bold">Detail stránky</h1>
-        <Button icon="pi pi-info-circle" severity="secondary" text rounded @click="showAudit = true" />
-      </div>
+        <Button icon="pi pi-info-circle" severity="secondary" text rounded @click="onShowAudit" />
+    </div>
       <div class="flex gap-2">
         <Button label="Zrušiť" class="secondary" @click="onCancel" />
         <Button label="Uložiť" class="primary" @click="onSave" />
@@ -109,15 +104,6 @@ function formatDate(iso: string | undefined): string {
         </div>
       </div>
     </div>
-  
-    <!-- Dialóg s audit informáciami -->
-    <Dialog v-model:visible="showAudit" header="Audit informácie" modal>
-      <div class="space-y-2">
-        <p><strong>Vytvoril:</strong> {{ page.audit?.createdBy || '—' }}</p>
-        <p><strong>Dátum vytvorenia:</strong> {{ formatDate(page.audit?.created) || '—' }}</p>
-        <p><strong>Upravil:</strong> {{ page.audit?.modifiedBy || '—' }}</p>
-        <p><strong>Dátum úpravy:</strong> {{ formatDate(page.audit?.modified) || '—' }}</p>
-      </div>
-    </Dialog>
+    <AuditPanel ref="auditPanelRef" :audit="page.audit" />
   </template>
   
