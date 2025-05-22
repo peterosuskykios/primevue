@@ -1,6 +1,7 @@
   <script setup lang="ts">
   import { computed, ref, watch, defineExpose } from 'vue';
   import InputText from 'primevue/inputtext';
+  import Popover from 'primevue/popover'
   
   const props = defineProps<{
     audit: {
@@ -11,7 +12,7 @@
     } | undefined;
   }>();
   
-  const panel = ref<InstanceType<typeof OverlayPanel>>();
+  const panel = ref<InstanceType<typeof Popover>>();
   const contentLength = ref('20rem');
   
   const createdDate = computed(() =>
@@ -49,7 +50,7 @@
 
 <template>
     <Popover ref="panel" :dismissable="true" :base-z-index="1004" :style="{ width: contentLength }">
-      <h3 class="mb-2 text-lg font-semibold">Audit informácie</h3>
+      <h3 class="mb-2 text-lg font-bold">Audit</h3>
       <div class="flex flex-col gap-3">
         <div>
           <label class="font-medium">Vytvoril</label>
