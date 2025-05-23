@@ -5,6 +5,17 @@ import { useRouter, useRoute } from 'vue-router';
 import pagesJson from '@/assets/test_CmsPageDto.json';
 // @ts-ignore
 import AuditPanel from '@/cms/components/AuditOverlayPanel.vue';
+import CKEditor from '@ckeditor/ckeditor5-vue';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+const editor = ClassicEditor;
+const editorData = ref('<p>Hello CKEditor 5!</p>');
+
+defineOptions({
+  components: {
+    ckeditor: CKEditor.component
+  }
+});
 
 const router = useRouter();
 const route = useRoute();
@@ -102,6 +113,10 @@ function onShowAudit(event: Event) {
           <label class="block font-semibold mb-1">Text EN</label>
           <Textarea v-model="textEn" autoResize class="w-full" rows="5" />
         </div>
+
+        <ckeditor :editor="editor" v-model="editorData" />
+
+
       </div>
     </div>
     <AuditPanel ref="auditPanelRef" :audit="page.audit" />
